@@ -28,7 +28,6 @@ on:
 
 jobs:
   build:
-    if: ${{ github.repository_owner == 'apache' }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -38,7 +37,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v4
       with:
-        images: apache/answer
+        images: zaiyong/answer
         tags: |
           type=ref,enable=true,priority=600,prefix=,suffix=,event=branch
           type=semver,pattern={{version}}
